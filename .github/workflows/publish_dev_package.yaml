@@ -10,8 +10,8 @@ on:
   pull_request:
     branches:
       - main
-    paths:
-      - '.github/workflows/publish_dev_package.yaml'
+    # paths:
+    #   - '.github/workflows/publish_dev_package.yaml'
 
 jobs:
   build-n-publish:
@@ -23,9 +23,8 @@ jobs:
       uses: actions/setup-python@v2.3.1
       with:
         python-version: 3.8
-    - name: Get history and tags for SCM versioning
-      run: |
-          echo "skip"
+    # - name: Get history and tags for SCM versioning
+    #   run: |
           # git fetch --prune --unshallow
           # git fetch --depth=1 origin +refs/tags/*:refs/tags/*
     - name: Install pypa/build
